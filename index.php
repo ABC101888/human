@@ -21,12 +21,13 @@
 			<h2>Submission</h2>
 				<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 									
-				<!––Enter in first name and last name of applicant-->
 				<table align="center" accesskey=""border="0" cellpadding="5" cellspacing="0">
 					<tr> 
 						<td>
 							<label for="fName"><b>Photo<b/></label><br/>
-							<input type="file" name="pic" accept="image/*">   
+							<input type="file" name="pic" accept="image/*"> 
+							<br>
+							<br>
 						</td> 
 					</tr> 
 
@@ -44,26 +45,24 @@
 						</td> 
 					</tr> 
 
-					<!––Enter in name and DOB of applicant-->
 					<tr>
 						<td colspan="2">
 							<label for="gender"><b>Are you willing to gender?*</b></label><br/>
 							<input name="gender" type="radio" value="Yes" <?php if (isset($_POST['gender']) && $_POST['gender'] == "Yes") echo 'checked="checked"';?>>Male
 							<input name="gender" type="radio" value="No" <?php if (isset($_POST['gender']) && $_POST['gender'] == "No") echo 'checked="checked"';?>>Female 
-							<?php if(isset($output['gender'])){echo "<font color='yellow'>".$output['gender']."</font>";}?><br/>   
+							<?php if(isset($output['gender'])){echo "<font color='yellow'>".$output['gender']."</font>";}?>
+							<br/>
+							<br>
 						</td> 
 					</tr> 
 					
-  `height` VARCHAR(45) NOT NULL,
-  `locationLastSeen` VARCHAR(45) NOT NULL,
-  `physicalDesc` VARCHAR(45) NOT NULL,
-  `image` 
 					<tr> 
 						<td>
 							<label for="height"><b>Height*</b></label><br/>
 							<input name="height" type="text" style="width: 260px" value="<?php if(isset($_POST['height'])){echo $_POST['height'];}?>"/><br/>
 							<?php if(isset($output['height'])){echo "<font color='yellow'>".$output['height']."</font>";} ?><br/>  
 						</td> 
+						
 						<td>
 							<label for="weight"><b>weight</b></label><br/>
 							<input name="weight" type="text"  style="width: 260px" value="<?php if(isset($_POST['weight'])){echo $_POST['weight'];}?>"/><br/>
@@ -72,40 +71,43 @@
 					</tr> 
 					
 					<tr> 
-						<td>
+						<td colspan="2">
 							<label for="height"><b>Physical Description*</b></label><br/>
 							<textarea rows="4" cols="50"></textarea> 
 						</td> 
 					</tr> 
 					
-					<!––Enter in applicant's Phone Number -->
-					<tr> 
+					<tr>
 						<td>
+							<span style="font-size:22px">Contact Us</span>
+						</td>
+					</tr>
+					
+					<tr> 
+						<td style="width: 50%">
 							<label for="Phone"><b>Phone (XXX-XXX-XXXX)*</b></label><br/>
 							<input name="Phone" type="text" style="width: 260px" value="<?php if(isset($_POST['Phone'])){echo $_POST['Phone'];}?>"/><br/>
 							<?php if(isset($output['Phone'])){echo "<font color='yellow'>".$output['Phone']."</font>";} ?><br/>  
 						</td> 
 
-					<!––Enter in applicant's Email-->
-						<td>
+						<td style="width: 50%">
 							<label for="Email_Address"><b>Email *</b></label><br/>
 							<input name="Email_Address" type="text"  style="width: 260px" value="<?php if(isset($_POST['Email_Address'])){echo $_POST['Email_Address'];}?>"/><br/>
 							<?php if(isset($output['Email_Address'])){echo "<font color='yellow'>".$output['Email_Address']."</font>";} ?><br/>  
 						</td> 
 					</tr> 
 
-					<!––Enter in applicant's Address-->
 					<tr> 
 						<td colspan="2">
-							<label for="Address"><b>Address (Example: 3990 Fifth Ave, Pittsburgh, PA 15213 US)*</b></label><br />
-							<input name="Address" type="text"  style="width: 535px" value="<?php if(isset($_POST['Address'])){echo $_POST['Address'];}?>"/><br/>
-							<?php if(isset($output['Address'])){echo "<font color='yellow'>".$output['Address']."</font>";}?><br/>   
+							<label for="reward"><b>Reward</b></label><br />
+							<input name="reward" type="text"  style="width: 535px" value="<?php if(isset($_POST['reward'])){echo $_POST['reward'];}?>"/><br/>
+							<?php if(isset($output['reward'])){echo "<font color='yellow'>".$output['reward']."</font>";}?><br/>   
 						</td> 
 					</tr> 
 
 					<tr> 
 						<td colspan="2" style="text-align: center;">
-							<input name="submit" type="submit" value="Send Application"/>
+							<input name="submit" type="submit" class="registerbtn"/>
 						</td> 
 					</tr>
 				</table>
@@ -125,18 +127,12 @@
 		</div>
 	  <div class="rightcolumn">
 		<div class="card">
-		  <h3>Popular Post</h3>
-		  <div class="fakeimg"><p>Image</p></div>
-		  <div class="fakeimg"><p>Image</p></div>
-		  <div class="fakeimg"><p>Image</p></div>
-		</div>
-		<div class="card">
 		  <h2 id="about">About Us</h2>
 		  <div></div>
 		  <p></p>
 		</div>
 		<div class="card">
-		  <h3>Follow Us</h3>
+		  <h3>Contact Us</h3>
 			<a href="#" class="facebook"><i class='fab fa-facebook' style='font-size:48px;color:#3b5998'></i></a>
 			<a href="#" class="twitter"><i class='fab fa-twitter' style='font-size:48px;color:#1da1f2'></i></a>
 			<a href="#" class="reddit"><i class='fab fa-reddit' style='font-size:48px;color:#ff4500'></i></a>
@@ -146,9 +142,7 @@
 
 <div class="footer">
 	<div style="text-align:center">
-		<h3 id="contact" style="font-size: 24px; margin:8px">Contact Us</h3>
-		<p style="font-size: 14px; margin:4px;">University of Pittsburgh</p>
-		<p style="font-size: 14px; margin:4px;"> @pitt.edu</p>
+		<h3 id="contact" style="font-size: 24px; margin:8px">Find'em Kids</h3>
 		<span class="footer_text" style="font-size: 10px;">Copyright © 2019 All Rights Reserved. </span>
 	</div>
 </div>
