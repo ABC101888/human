@@ -13,25 +13,114 @@
 	  	<a href="index.php">Home</a>
 	  	<a href="#contact">Contact</a>
 	  	<a href="#about">About Us</a>
-		<a href="login.php" style="float:right">Login</a>
-		<a href="signup.php" style="float:right">Sign Up</a>
 	</div>
 
 	<div class="row" id="home">
 		<div class="leftcolumn">
 			<div class="card">
-			<h2>Heading</h2>
-				<h5>Title description, Dec 7, 2017</h5>
-			  <div class="fakeimg" style="height:200px;">Image</div>
-			  <p>Some text..</p>
-			  <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+			<h2>Submission</h2>
+				<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+									
+				<!––Enter in first name and last name of applicant-->
+				<table align="center" accesskey=""border="0" cellpadding="5" cellspacing="0">
+					<tr> 
+						<td>
+							<label for="fName"><b>Photo<b/></label><br/>
+							<input type="file" name="pic" accept="image/*">   
+						</td> 
+					</tr> 
+
+					<tr> 
+						<td style="width: 50%">
+							<label for="fName"><b> Full Name *<b/></label><br/>
+							<input name="fName" type="text" style="width: 260px" value="<?php if(isset($_POST['fName'])){echo $_POST['fName'];}?>"/><br/>
+							<?php if(isset($output['fName'])){echo "<font color='yellow'>".$output['fName']."</font>";}?><br/>    
+						</td> 
+
+						<td style="width: 50%">
+							<label for="DOB"><b>Age*</b></label><br/>
+							<input name="age" type="text" style="width: 260px" value="<?php if(isset($_POST['age'])){echo $_POST['age'];} ?>"/><br/>
+							<?php if(isset($output['age'])){echo "<font color='yellow'>".$output['age']."</font>";} ?><br/>    
+						</td> 
+					</tr> 
+
+					<!––Enter in name and DOB of applicant-->
+					<tr>
+						<td colspan="2">
+							<label for="gender"><b>Are you willing to gender?*</b></label><br/>
+							<input name="gender" type="radio" value="Yes" <?php if (isset($_POST['gender']) && $_POST['gender'] == "Yes") echo 'checked="checked"';?>>Male
+							<input name="gender" type="radio" value="No" <?php if (isset($_POST['gender']) && $_POST['gender'] == "No") echo 'checked="checked"';?>>Female 
+							<?php if(isset($output['gender'])){echo "<font color='yellow'>".$output['gender']."</font>";}?><br/>   
+						</td> 
+					</tr> 
+					
+  `height` VARCHAR(45) NOT NULL,
+  `locationLastSeen` VARCHAR(45) NOT NULL,
+  `physicalDesc` VARCHAR(45) NOT NULL,
+  `image` 
+					<tr> 
+						<td>
+							<label for="height"><b>Height*</b></label><br/>
+							<input name="height" type="text" style="width: 260px" value="<?php if(isset($_POST['height'])){echo $_POST['height'];}?>"/><br/>
+							<?php if(isset($output['height'])){echo "<font color='yellow'>".$output['height']."</font>";} ?><br/>  
+						</td> 
+						<td>
+							<label for="weight"><b>weight</b></label><br/>
+							<input name="weight" type="text"  style="width: 260px" value="<?php if(isset($_POST['weight'])){echo $_POST['weight'];}?>"/><br/>
+							<?php if(isset($output['weight'])){echo "<font color='yellow'>".$output['weight']."</font>";} ?><br/>  
+						</td> 
+					</tr> 
+					
+					<tr> 
+						<td>
+							<label for="height"><b>Physical Description*</b></label><br/>
+							<textarea rows="4" cols="50"></textarea> 
+						</td> 
+					</tr> 
+					
+					<!––Enter in applicant's Phone Number -->
+					<tr> 
+						<td>
+							<label for="Phone"><b>Phone (XXX-XXX-XXXX)*</b></label><br/>
+							<input name="Phone" type="text" style="width: 260px" value="<?php if(isset($_POST['Phone'])){echo $_POST['Phone'];}?>"/><br/>
+							<?php if(isset($output['Phone'])){echo "<font color='yellow'>".$output['Phone']."</font>";} ?><br/>  
+						</td> 
+
+					<!––Enter in applicant's Email-->
+						<td>
+							<label for="Email_Address"><b>Email *</b></label><br/>
+							<input name="Email_Address" type="text"  style="width: 260px" value="<?php if(isset($_POST['Email_Address'])){echo $_POST['Email_Address'];}?>"/><br/>
+							<?php if(isset($output['Email_Address'])){echo "<font color='yellow'>".$output['Email_Address']."</font>";} ?><br/>  
+						</td> 
+					</tr> 
+
+					<!––Enter in applicant's Address-->
+					<tr> 
+						<td colspan="2">
+							<label for="Address"><b>Address (Example: 3990 Fifth Ave, Pittsburgh, PA 15213 US)*</b></label><br />
+							<input name="Address" type="text"  style="width: 535px" value="<?php if(isset($_POST['Address'])){echo $_POST['Address'];}?>"/><br/>
+							<?php if(isset($output['Address'])){echo "<font color='yellow'>".$output['Address']."</font>";}?><br/>   
+						</td> 
+					</tr> 
+
+					<tr> 
+						<td colspan="2" style="text-align: center;">
+							<input name="submit" type="submit" value="Send Application"/>
+						</td> 
+					</tr>
+				</table>
+			</form>
 			</div>
+			
+
+			
+			
 			<div class="card">
-			<h2>Heading</h2>
-			<h5>Title description, Sep 2, 2017</h5>
-			<div class="fakeimg" style="height:200px;">Image</div>
-			<p>Some text..</p>
-			<p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+				<h2>Heading</h2>
+				<h5>Title description, Sep 2, 2017</h5>
+				<div class="fakeimg" style="height:200px;">Image</div>
+				<p>Some text..</p>
+				<p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
 			</div>
 		</div>
 	  <div class="rightcolumn">
